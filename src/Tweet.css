@@ -1,0 +1,88 @@
+.tweet-card {
+    width: 473px;
+    top: 1082px;
+    left: 16px;
+    padding: 16px;
+    gap: 16px;
+    border-bottom: 1px solid #F0F3F4;
+    opacity: 1;
+}
+
+.tweet-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.information{
+    gap: 8px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 16.5px;
+}
+
+.tweet-author img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.circle{
+    width: 3px; /* Ancho del círculo */
+    height: 3px; /* Altura del círculo */
+    border-radius: 50%; /* Hace que el borde sea redondo para formar un círculo */
+    background-color: #566370; /* Color de fondo del círculo */
+}
+
+.circle-button{
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #566370;
+    top: 6.5px;
+    left: 6.5px;
+    margin-right: 4px;
+}
+
+.tweet-author span {
+    font-weight: 600;
+}
+
+.tweet-author p {
+    font-weight: 400;
+    color: #566370;
+}
+
+.tweet-content {
+    padding: 0 0 0 56px;
+    gap: 8px;
+    font-size: 15px;
+    line-height: 16.5px;
+    font-weight: 400;
+}
+
+.tweet-images {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 56px;
+    gap: 8px;
+}
+
+.tweet-images img {
+    width: 385px;
+    height: 222px;
+    border-radius: 10px;
+}
+
+.tweet-stats {
+    padding: 8px 0 0 56px;
+    gap: 24px;
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: 15px;
+    line-height: 16.5px;
+    font-weight: 400;
+}
