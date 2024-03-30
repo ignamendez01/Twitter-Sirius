@@ -1,0 +1,66 @@
+.recommendation {
+    padding: 16px 16px 0 16px;
+}
+
+.option {
+    width: 328px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-size: 15px;
+    line-height: 16.5px;
+}
+
+.person img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: bold;
+    color: black;
+}
+
+.user {
+    font-weight: 400;
+    color: #566370;
+}
+
+.follow-button {
+    background-color: black;
+    color: white;
+    width: 82px;
+    height: 33px;
+    border-radius: 40px;
+    gap: 8px;
+    padding: 8px 16px 8px 16px;
+    text-transform: none;
+}
+
+.candidates {
+    color: #F0F3F4;
+    width: 360px;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 16px;
+}
+
+.text-input{
+    top: 24px;
+    width: 360px;
+    border-radius: 30px;
+    background-color: #F0F3F4;
+    height: 49px;
+    gap: 8px;
+    padding-left: 24px;
+    font-size: 15px;
+    border: none;
+}

@@ -1,0 +1,59 @@
+.modal {
+    position: absolute;
+    top: 205px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 454px;
+    background-color: white;
+    padding: 16px;
+    gap: 16px;
+}
+
+.modal-author {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-size: 15px;
+    line-height: 16.5px;
+}
+
+.modal-author img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.user {
+    font-weight: 400;
+    color: #566370;
+}
+
+.modal-stats {
+    padding: 8px 0 0 0;
+    gap: 24px;
+    display: flex;
+    align-items: center;
+    color: #777;
+    font-size: 15px;
+    line-height: 16.5px;
+    font-weight: 400;
+}
+
+.modal-content {
+    gap: 8px;
+    font-size: 15px;
+    line-height: 16.5px;
+    font-weight: 400;
+}
+
+.modal-date {
+    gap: 8px;
+    font-size: 15px;
+    line-height: 16.5px;
+    font-weight: 400;
+    color: #777;
+}
