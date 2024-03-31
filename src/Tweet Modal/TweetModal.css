@@ -1,6 +1,6 @@
 .modal {
     position: absolute;
-    top: 205px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 454px;
@@ -48,6 +48,18 @@
     font-size: 15px;
     line-height: 16.5px;
     font-weight: 400;
+}
+
+.modal-images {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-images img {
+    width: 385px;
+    height: 212px;
+    border-radius: 10px;
 }
 
 .modal-date {

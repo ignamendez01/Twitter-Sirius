@@ -11,7 +11,7 @@ const Menu: React.FC = () => {
     return (
         <div className="menu">
             <img src={twitter} alt="Tweet Image" style={{  width: '20px', height: '16px' }}/>
-            <Button  startIcon={<HomeIcon style={{ fontSize: '1.8rem' }} />} className="action">
+            <Button  startIcon={<HomeIcon style={{ fontSize: '1.8rem' }} />} disabled className="action">
                 <b>Home</b>
             </Button>
             <Button  startIcon={<SearchIcon style={{ fontSize: '1.8rem' }} />} className="action">

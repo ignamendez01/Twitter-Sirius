@@ -3,7 +3,6 @@ import { IconButton } from "@mui/material";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import RepeatOnIcon from "@mui/icons-material/RepeatOn";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import { useState } from "react";
 
@@ -119,6 +118,15 @@ const TweetModal: React.FC<TweetModalProps> = ({ tweet, likes, liked, retweets, 
             <div className="modal-content">
                 <p>{tweet.content}</p>
             </div>
+            <div className="modal-images">
+                {tweet.images && (
+                    <div>
+                        {tweet.images.map((image, index) => (
+                            <img key={index} src={image} alt="Modal Image"/>
+                        ))}
+                    </div>
+                )}
+            </div>
             <div className="modal-date">
                 <p>{formatDateTime(tweet.createdAt)}</p>
             </div>
@@ -129,7 +137,7 @@ const TweetModal: React.FC<TweetModalProps> = ({ tweet, likes, liked, retweets, 
                 <span>{tweet.comments.length}</span>
                 {isLiked ?
                     <IconButton aria-label="like" size="small" onClick={unlike}>
-                        <FavoriteIcon fontSize="inherit" />
+                        <FavoriteIcon style={{color: "red"}} fontSize="inherit" />
                     </IconButton>
                     :
                     <IconButton aria-label="like" size="small" onClick={like}>
@@ -139,7 +147,7 @@ const TweetModal: React.FC<TweetModalProps> = ({ tweet, likes, liked, retweets, 
                 <span>{likesCount}</span>
                 {isRetweeted ?
                     <IconButton aria-label="retweet" size="small" onClick={unretweet}>
-                        <RepeatOnIcon fontSize="inherit" />
+                        <RepeatIcon fontSize="inherit" style={{color: "green"}}/>
                     </IconButton>
                     :
                     <IconButton aria-label="retweet" size="small" onClick={retweet}>
