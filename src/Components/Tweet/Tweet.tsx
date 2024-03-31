@@ -1,5 +1,5 @@
 import './Tweet.css';
-import { IconButton, Modal } from '@mui/material';
+import { Modal } from '@mui/material';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -47,39 +47,39 @@ interface TweetProps {
 
 function TweetStats(tweet: { id: string; author: { id: string; firstName: string; lastName: string; username: string; profilePicture: string; private: boolean }; content: string; createdAt: string; reactions: { id: string; user: { username: string; profilePicture: string; private: boolean }; type: string }[]; comments: { id: string; author: { id: string; firstName: string; lastName: string; username: string; profilePicture: string; private: boolean }; content: string }[]; images?: string[] }, liked: boolean, unlike: () => void, like: () => void, likes: number, retweeted: boolean, unretweet: () => void, retweet: () => void, retweets: number) {
     return <div className="tweet-stats">
-        <IconButton aria-label="comment" size="small">
+        <button aria-label="comment" className="icon-button">
             <ChatBubbleOutlineIcon fontSize="inherit"/>
-        </IconButton>
+        </button>
         <span>{tweet.comments.length}</span>
         {liked ?
-            <IconButton aria-label="like" size="small" onClick={unlike}>
-                <FavoriteIcon style={{color: "red"}} fontSize="inherit"/>
-            </IconButton>
+            <button aria-label="like" onClick={unlike} className="icon-button">
+                <FavoriteIcon fontSize="inherit" className="liked"/>
+            </button>
             :
-            <IconButton aria-label="like" size="small" onClick={like}>
+            <button aria-label="like" className="icon-button" onClick={like}>
                 <FavoriteBorderIcon fontSize="inherit"/>
-            </IconButton>
+            </button>
         }
         <span>{likes}</span>
         {retweeted ?
-            <IconButton aria-label="retweet" size="small" onClick={unretweet}>
-                <RepeatIcon fontSize="inherit" style={{color: "green"}}/>
-            </IconButton>
+            <button aria-label="retweet" onClick={unretweet} className="icon-button">
+                <RepeatIcon fontSize="inherit" className="retweeted"/>
+            </button>
             :
-            <IconButton aria-label="retweet" size="small" onClick={retweet}>
+            <button aria-label="retweet" onClick={retweet} className="icon-button">
                 <RepeatIcon fontSize="inherit" />
-            </IconButton>
+            </button>
         }
         <span>{retweets}</span>
     </div>;
 }
 
 function MoreButton() {
-    return <IconButton aria-label="comment" size="small">
+    return <button aria-label="more" className="icon-button">
         <div className="circle-button"/>
         <div className="circle-button"/>
         <div className="circle-button"/>
-    </IconButton>;
+    </button>;
 }
 
 const Tweet: React.FC<TweetProps> = ({ tweet }) => {
@@ -126,9 +126,9 @@ const Tweet: React.FC<TweetProps> = ({ tweet }) => {
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
         const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const month = monthNames[date.getMonth()]; // Obtener el nombre del mes
-        const day = date.getDate(); // Obtener el día del mes
-        return `${month} ${day}`; // Devolver el formato "Month Day"
+        const month = monthNames[date.getMonth()];
+        const day = date.getDate();
+        return `${month} ${day}`;
     };
 
     return (

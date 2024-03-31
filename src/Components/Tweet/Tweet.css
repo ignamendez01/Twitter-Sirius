@@ -30,10 +30,10 @@
 }
 
 .circle{
-    width: 3px; /* Ancho del círculo */
-    height: 3px; /* Altura del círculo */
-    border-radius: 50%; /* Hace que el borde sea redondo para formar un círculo */
-    background-color: #566370; /* Color de fondo del círculo */
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #566370;
 }
 
 .circle-button{
@@ -85,4 +85,19 @@
     font-size: 15px;
     line-height: 16.5px;
     font-weight: 400;
+}
+
+.liked {
+    color: red;
+}
+
+.retweeted {
+    color: green;
+}
+
+.icon-button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
 }

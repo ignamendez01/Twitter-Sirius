@@ -1,6 +1,5 @@
 import React from 'react';
-import tweetsData from "../tweets.json";
-import { Button } from '@mui/material';
+import tweetsData from "../../tweets.json";
 import './Recommendations.css';
 
 interface OptionProps {
@@ -21,9 +20,9 @@ const Option: React.FC<OptionProps> = ({picture, name, lastName, userName}) =>{
                     <span className="user">@{userName}</span>
                 </div>
             </div>
-            <Button variant="contained" className="follow-button">
+            <button className="follow-button">
                 Follow
-            </Button>
+            </button>
         </div>
     );
 }
@@ -33,14 +32,14 @@ const Recommendations: React.FC = () => {
         <div className="recommendation">
             <input className="text-input" placeholder="Search"/>
             <div className="candidates">
-                <p style={{color: "black", fontSize: "18px"}}><b>Who to Follow</b></p>
+                <p><b>Who to Follow</b></p>
                 {tweetsData.map(tweet => (
                     <Option key={tweet.id} picture={tweet.author.profilePicture} name={tweet.author.firstName}
                             lastName={tweet.author.lastName} userName={tweet.author.username}/>
                 ))}
-                <Button variant="text">
+                <button className="text-button">
                     Show More
-                </Button>
+                </button>
             </div>
         </div>
     );

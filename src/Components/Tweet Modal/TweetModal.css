@@ -69,3 +69,18 @@
     font-weight: 400;
     color: #777;
 }
+
+.liked {
+    color: red;
+}
+
+.retweeted {
+    color: green;
+}
+
+.icon-button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}

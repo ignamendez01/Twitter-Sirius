@@ -1,5 +1,4 @@
 import './TweetModal.css';
-import { IconButton } from "@mui/material";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -89,19 +88,14 @@ const TweetModal: React.FC<TweetModalProps> = ({ tweet, likes, liked, retweets, 
 
     const formatDateTime = (dateTimeString: string) => {
         const date = new Date(dateTimeString);
-        // Obtener la hora en formato 12 horas
         let hours = date.getHours();
         const ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12; // Convertir a formato 12 horas
-        // Obtener los minutos y agregar un cero inicial si es necesario
+        hours = hours % 12 || 12;
         const minutes = String(date.getMinutes()).padStart(2, '0');
-        // Obtener el nombre del mes y el día del mes
         const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         const month = monthNames[date.getMonth()];
         const day = date.getDate();
-        // Obtener el año
         const year = date.getFullYear();
-        // Crear la cadena de fecha y hora formateada
         return `${hours}:${minutes} ${ampm} ${month} ${day}, ${year}`;
     };
 
@@ -131,28 +125,28 @@ const TweetModal: React.FC<TweetModalProps> = ({ tweet, likes, liked, retweets, 
                 <p>{formatDateTime(tweet.createdAt)}</p>
             </div>
             <div className="modal-stats">
-                <IconButton aria-label="comment" size="small">
-                    <ChatBubbleOutlineIcon fontSize="inherit" />
-                </IconButton>
+                <button aria-label="comment" className="icon-button">
+                    <ChatBubbleOutlineIcon fontSize="inherit"/>
+                </button>
                 <span>{tweet.comments.length}</span>
                 {isLiked ?
-                    <IconButton aria-label="like" size="small" onClick={unlike}>
-                        <FavoriteIcon style={{color: "red"}} fontSize="inherit" />
-                    </IconButton>
+                    <button aria-label="like" onClick={unlike} className="icon-button">
+                        <FavoriteIcon fontSize="inherit" className="liked"/>
+                    </button>
                     :
-                    <IconButton aria-label="like" size="small" onClick={like}>
-                        <FavoriteBorderIcon fontSize="inherit" />
-                    </IconButton>
+                    <button aria-label="like" className="icon-button" onClick={like}>
+                        <FavoriteBorderIcon fontSize="inherit"/>
+                    </button>
                 }
                 <span>{likesCount}</span>
                 {isRetweeted ?
-                    <IconButton aria-label="retweet" size="small" onClick={unretweet}>
-                        <RepeatIcon fontSize="inherit" style={{color: "green"}}/>
-                    </IconButton>
+                    <button aria-label="retweet" onClick={unretweet} className="icon-button">
+                        <RepeatIcon fontSize="inherit" className="retweeted"/>
+                    </button>
                     :
-                    <IconButton aria-label="retweet" size="small" onClick={retweet}>
+                    <button aria-label="retweet" onClick={retweet} className="icon-button">
                         <RepeatIcon fontSize="inherit" />
-                    </IconButton>
+                    </button>
                 }
                 <span>{retweetsCount}</span>
             </div>
